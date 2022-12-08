@@ -58,9 +58,10 @@ function Chat() {
         <div className="chat__headerInfo">
           <h3>{roomName}</h3>
           <p>
+            Last Seen{" "}
             {new Date(
-              messages[messages.length - 1]?.timestamp?.seconds * 1000
-            ).toLocaleTimeString()}
+              messages[messages.length - 1]?.timestamp?.toDate()
+            ).toUTCString()}
           </p>
         </div>
         <div className="header__right">
@@ -85,7 +86,7 @@ function Chat() {
             <span className="chat__name">{message.name}</span>
             {message.message}
             <span className="chat__time">
-              {new Date(message.timestamp?.seconds * 1000).toLocaleTimeString()}
+              {new Date(message.timestamp?.toDate()).toUTCString()}
             </span>
           </p>
         ))}

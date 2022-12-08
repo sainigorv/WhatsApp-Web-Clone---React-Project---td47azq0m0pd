@@ -1,6 +1,6 @@
 import { Avatar, IconButton } from "@mui/material";
 import React, { useState, useEffect } from "react";
-import DonutLargeIcon from "@mui/icons-material/DonutLarge";
+import LogoutIcon from "@mui/icons-material/Logout";
 import ChatIcon from "@mui/icons-material/Chat";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import SearchIcon from "@mui/icons-material/Search";
@@ -27,13 +27,13 @@ function Sidebar() {
   return (
     <div className="sidebar">
       <div className="sidebar__header">
-        <Avatar
-          src={user.photoURL}
-          onClick={(e) => firebase.auth().signOut()}
-        />
+        <IconButton>
+          <Avatar src={user.photoURL} />
+        </IconButton>
+
         <div className="sidebar__headerRight">
           <IconButton>
-            <DonutLargeIcon />
+            <LogoutIcon onClick={(e) => firebase.auth().signOut()} />
           </IconButton>
 
           <IconButton>

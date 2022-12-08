@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import AttachFileIcon from "@mui/icons-material/AttachFile";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import SendIcon from "@mui/icons-material/Send";
 import "./css/chat.css";
 import EmojiEmotionsOutlinedIcon from "@mui/icons-material/EmojiEmotionsOutlined";
 import MicIcon from "@mui/icons-material/Mic";
@@ -47,7 +48,9 @@ function Chat() {
   return (
     <div className="chat">
       <div className="chat__header">
-        <Avatar src={user.photoURL} />
+        <IconButton>
+          <Avatar src={user.photoURL} />
+        </IconButton>
         <div className="chat__headerInfo">
           <h3>{roomName}</h3>
           <p>
@@ -72,7 +75,7 @@ function Chat() {
         {messages.map((message) => (
           <p
             className={`chat__message ${
-              user.displayName == message.name && "chat__reciever"
+              user.displayName === message.name && "chat__reciever"
             }`}
           >
             <span className="chat__name">{message.name}</span>
@@ -87,6 +90,7 @@ function Chat() {
       <div className="chat__footer">
         <EmojiEmotionsOutlinedIcon />
         <AttachFileIcon />
+
         <form onSubmit={sendMessage}>
           <input
             type="text"
@@ -96,8 +100,12 @@ function Chat() {
           />
           <input type="submit" />
         </form>
-
-        <MicIcon />
+        <IconButton>
+          <MicIcon />
+        </IconButton>
+        <IconButton>
+          <SendIcon className="send" />
+        </IconButton>
       </div>
     </div>
   );

@@ -3,6 +3,9 @@
   display: flex;
   flex-direction: column;
 }
+.chat__header {
+  background-color: #e2e0e0;
+}
 .chat .chat__header {
   display: flex;
   align-items: center;
@@ -70,12 +73,15 @@
 .chat__footer {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 10px;
+  background-color: #e2e0e0;
 }
 
 .chat__footer svg {
   padding: 10px;
   color: gray;
+  cursor: pointer;
 }
 
 .chat__footer form {
@@ -91,4 +97,9 @@
 
 .chat__footer form input[type="submit"] {
   display: none;
+}
+
+.send {
+  background-color: #128c7e;
+  border-radius: 40px;
 }

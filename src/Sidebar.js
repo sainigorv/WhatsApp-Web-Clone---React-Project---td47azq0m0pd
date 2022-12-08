@@ -24,6 +24,10 @@ function Sidebar() {
     });
   }, []);
 
+  const toggleChatClick = () => {
+    alert("Few Function are still in progress");
+  };
+
   return (
     <div className="sidebar">
       <div className="sidebar__header">
@@ -37,11 +41,11 @@ function Sidebar() {
           </IconButton>
 
           <IconButton>
-            <ChatIcon />
+            <ChatIcon onClick={toggleChatClick} />
           </IconButton>
 
           <IconButton>
-            <MoreVertIcon />
+            <MoreVertIcon onClick={toggleChatClick} />
           </IconButton>
         </div>
       </div>

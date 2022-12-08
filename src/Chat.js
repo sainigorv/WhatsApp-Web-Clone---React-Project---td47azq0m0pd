@@ -45,6 +45,10 @@ function Chat() {
     });
     setInput("");
   };
+
+  const toggleChatClick = () => {
+    alert("Few Functions are still in progress");
+  };
   return (
     <div className="chat">
       <div className="chat__header">
@@ -61,13 +65,13 @@ function Chat() {
         </div>
         <div className="header__right">
           <IconButton>
-            <SearchIcon />
+            <SearchIcon onClick={toggleChatClick} />
           </IconButton>
           <IconButton>
-            <AttachFileIcon />
+            <AttachFileIcon onClick={toggleChatClick} />
           </IconButton>
           <IconButton>
-            <MoreVertIcon />
+            <MoreVertIcon onClick={toggleChatClick} />
           </IconButton>
         </div>
       </div>
@@ -88,8 +92,8 @@ function Chat() {
       </div>
 
       <div className="chat__footer">
-        <EmojiEmotionsOutlinedIcon />
-        <AttachFileIcon />
+        <EmojiEmotionsOutlinedIcon onClick={toggleChatClick} />
+        <AttachFileIcon onClick={toggleChatClick} />
 
         <form onSubmit={sendMessage}>
           <input
@@ -101,10 +105,10 @@ function Chat() {
           <input type="submit" />
         </form>
         <IconButton>
-          <MicIcon />
+          <MicIcon onClick={toggleChatClick} />
         </IconButton>
         <IconButton>
-          <SendIcon className="send" />
+          <SendIcon className="send" onClick={toggleChatClick} />
         </IconButton>
       </div>
     </div>

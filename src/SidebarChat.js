@@ -9,15 +9,16 @@ function SidebarChat({ id, name, addnewchat }) {
   const [lastMessage, setLastMessage] = useState("");
   useEffect(() => {
     setSeed(Math.floor(Math.random() * 5000));
-
-    db.collection("rooms")
-      .doc(id)
-      .collection("message")
-      .orderBy("timestamp", "desc")
-      .onSnapshot((snapshot) =>
-        setLastMessage(snapshot.docs.map((doc) => doc.data()))
-      );
-  }, []);
+    if (id) {
+      db.collection("rooms")
+        .doc(id)
+        .collection("message")
+        .orderBy("timestamp", "desc")
+        .onSnapshot((snapshot) =>
+          setLastMessage(snapshot.docs.map((doc) => doc.data()))
+        );
+    }
+  }, [id]);
   const createChat = () => {
     const room = prompt("Please enter room name");
     if (room) {

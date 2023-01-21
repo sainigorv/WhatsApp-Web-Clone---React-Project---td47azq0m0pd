@@ -16,11 +16,8 @@ function Chat() {
   const [roomName, setRoomName] = useState("");
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
-  const [seed, setSeed] = useState("");
   const [{ user }] = useStateValue();
   useEffect(() => {
-    setSeed(Math.floor(Math.random() * 5000));
-
     if (roomId) {
       db.collection("rooms")
         .doc(roomId)
@@ -56,7 +53,7 @@ function Chat() {
     <div className="chat">
       <div className="chat__header">
         <IconButton>
-          <Avatar src={`https://avatars.dicebear.com/api/human/${seed}.svg`} />
+          <Avatar src={user.photoURL} />
         </IconButton>
         <div className="chat__headerInfo">
           <h3>{roomName}</h3>

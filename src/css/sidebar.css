@@ -54,12 +54,6 @@
   align-items: center;
   border-bottom: 1px solid #eaeaea;
   padding: 10px;
-  justify-content: space-between;
-}
-
-.Avatar__chatinfo {
-  display: flex;
-  align-items: center;
 }
 .sidebar__chat:hover {
   cursor: pointer;
